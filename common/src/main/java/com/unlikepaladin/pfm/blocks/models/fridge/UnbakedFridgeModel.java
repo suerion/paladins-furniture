@@ -79,7 +79,7 @@ public class UnbakedFridgeModel implements UnbakedModel {
         Map<String,BakedModel> bakedModels = new LinkedHashMap<>();
         for (String modelPart : FRIDGE_MODEL_PARTS_BASE) {
             if (this.id.getPath().contains("gray"))
-                modelPart = modelPart.replaceAll("white", "gray");
+                modelPart = modelPart.replaceAll("fridge", "gray_fridge");
             bakedModels.put(modelPart, loader.bake(Identifier.of(PaladinFurnitureMod.MOD_ID, modelPart), rotationContainer));
         }
         return getBakedModel(textureGetter.apply(frameTex), rotationContainer, bakedModels, bakedModels.keySet().stream().toList());
